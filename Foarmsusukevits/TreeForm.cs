@@ -10,6 +10,7 @@ namespace Foarmsusukevits
     {
         TreeView tree;
         Button btn;
+        Label lbl;
         public TreeForm()
         {
             this.Height = 600;
@@ -28,10 +29,30 @@ namespace Foarmsusukevits
             btn.Location = new Point(150, 50);
             btn.Click += Btn_Click;
             btn.MouseDown += Btn_MouseDown;
-
-
+            btn.MouseHover += Btn_MouseHover;
+            btn.MouseLeave += Btn_MouseLeave;
+            treeNode.Nodes.Add(new TreeNode("Silt-Label"));
+            lbl = new Label();
+            lbl.Text = "Pealkiri";
+            lbl.Location = new Point(tree.Width, 0);
+            lbl.Size = new Size(this.Width,btn.Location.Y );
+            lbl.Font = new Font("Tahoma",24);
+            this.Controls.Add(btn);
+            this.Controls.Add(lbl);
+            btn.Visible = false; 
+            lbl.Visible = false;
             tree.Nodes.Add(treeNode);
             this.Controls.Add(tree);
+        }
+
+        private void Btn_MouseLeave(object? sender, EventArgs e)
+        {
+            btn.Height = 40;
+        }
+
+        private void Btn_MouseHover(object? sender, EventArgs e)
+        {
+            btn.Height = 100;
         }
 
         private void Btn_MouseDown(object? sender, MouseEventArgs e)
@@ -39,12 +60,39 @@ namespace Foarmsusukevits
             btn.BackColor = Color.Pink;
         }
 
+
         private void Tree_AfterSelect(object? sender, TreeViewEventArgs e)
         {
             if (e.Node.Text=="Nupp-Button")
             {
-                this.Controls.Add(btn);
                 
+                
+                
+                if (btn.Visible == true)
+                {
+                    btn.Visible = false;
+                }
+                else
+                {
+                    btn.Visible = true;
+                }
+
+
+            }
+            else if(e.Node.Text == "Silt-Label")
+            {
+                lbl.BackColor = Color.Pink;
+                if (lbl.Visible == true)
+                {
+                    lbl.Visible = false;
+                }
+                else
+                {
+                    lbl.Visible = true;
+                }
+
+
+
             }
         }
 
