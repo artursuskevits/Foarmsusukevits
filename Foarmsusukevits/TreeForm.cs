@@ -81,7 +81,7 @@ namespace Foarmsusukevits
             }
             else if(e.Node.Text == "Silt-Label")
             {
-                lbl.BackColor = Color.Pink;
+                lbl.BackColor = Color.LightPink;
                 if (lbl.Visible == true)
                 {
                     lbl.Visible = false;
