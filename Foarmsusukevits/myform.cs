@@ -32,7 +32,7 @@ namespace Foarmsusukevits
         private void Btn_Click(object? sender, EventArgs e)
         {
             myform form = new myform();
-            form.ShowDialog()
+            form.ShowDialog();
         }
     }
     

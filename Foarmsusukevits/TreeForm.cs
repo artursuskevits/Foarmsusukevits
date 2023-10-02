@@ -20,27 +20,45 @@ namespace Foarmsusukevits
             tree.BorderStyle = BorderStyle.Fixed3D;
             tree.AfterSelect += Tree_AfterSelect;
             TreeNode treeNode = new TreeNode("Elemendid");
-            tree.Nodes.Add(new TreeNode("Nupp-Button"));
+            treeNode.Nodes.Add(new TreeNode("Nupp-Button"));
             btn = new Button();
             btn.Height = 40;
             btn.Width = 100;
             btn.Text = "Valjutada mind";
-            btn.Location = new Point(50, 50);
+            btn.Location = new Point(150, 50);
             btn.Click += Btn_Click;
+            btn.MouseDown += Btn_MouseDown;
 
 
             tree.Nodes.Add(treeNode);
             this.Controls.Add(tree);
         }
 
+        private void Btn_MouseDown(object? sender, MouseEventArgs e)
+        {
+            btn.BackColor = Color.Pink;
+        }
+
         private void Tree_AfterSelect(object? sender, TreeViewEventArgs e)
         {
-            if (e.Node)
+            if (e.Node.Text=="Nupp-Button")
+            {
+                this.Controls.Add(btn);
+                
+            }
         }
 
         private void Btn_Click(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (btn.BackColor == Color.Aqua) 
+            {
+                btn.BackColor = Color.Chocolate;
+            }
+            else
+            {
+                btn.BackColor = Color.Aqua;
+            }
+
         }
     }
 }
