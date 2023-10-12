@@ -152,9 +152,9 @@ namespace Foarmsusukevits
             dataGrid.Height = 200;
             dataGrid.Width = 300;
             dataGrid.DataSource = ds;
-            dataGrid.AutoSize = true;
-            dataGrid.AutoGenerateColumns = true;
-            dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            //dataGrid.AutoSize = true;
+            //dataGrid.AutoGenerateColumns = true;
+            //dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             
             dataGrid.DataMember = "order";
             
