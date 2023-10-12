@@ -157,11 +157,12 @@ namespace Foarmsusukevits
             //dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             
             dataGrid.DataMember = "order";
-            
+
             this.Controls.Add(dataGrid);
 
-                
-           
+
+
+
         }
 
 
@@ -177,7 +178,7 @@ namespace Foarmsusukevits
                 }
                 else
                 {
-                    string tekst = Interaction.InputBox("Sisseta peakiri", "Uus peakiri", "Uuspeakiri");
+                    string tekst = Interaction.InputBox("Sisseta peakiri", "Uus peakiri", "Uuspeakirii");
                     if (tekst.Length>0)
                     {
                         this.Text = tekst;
