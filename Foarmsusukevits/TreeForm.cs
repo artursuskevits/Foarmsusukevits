@@ -160,6 +160,7 @@ namespace Foarmsusukevits
 
             this.Controls.Add(dataGrid);
             treeNode.Nodes.Add(new TreeNode("Kolmnurk"));
+            treeNode.Nodes.Add(new TreeNode("Kolmnurk2"));
 
 
 
@@ -331,6 +332,11 @@ namespace Foarmsusukevits
             else if(e.Node.Text=="Kolmnurk")
             { Kolmnurk Kolmnurk = new Kolmnurk();
                 Kolmnurk.ShowDialog(); }
+            else if (e.Node.Text == "Kolmnurk2")
+            {
+                Kolmnurk2 kolmnurk2 = new Kolmnurk2();
+                kolmnurk2.ShowDialog();
+            }
             else if (e.Node.Text == "Xml faill Mune") 
             { }
             tree.SelectedNode = null;

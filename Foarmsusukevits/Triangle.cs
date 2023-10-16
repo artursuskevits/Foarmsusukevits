@@ -29,31 +29,65 @@ namespace Foarmsusukevits
             ha = Ha;
         }
 
+        public string ShowASide ()
+        {
+            return Convert.ToString(a);
+        }
+        public string ShowCSide()
+        {
+            return Convert.ToString(c);
+        }
+        public string ShowBSide()
+        {
+            return Convert.ToString(b);
+        }
+
         public (string,string,string) ShowSides(double a, double b,double c)
         {
             return (Convert.ToString(a), Convert.ToString(b), Convert.ToString(c)); 
 
         }
-        public double foundTrinagleP(double a, double b, double c)
+        public string foundTrinagleP(double a, double b, double c)
         {
             double p = a + b + c;
-            return p;
+            string pstr = p.ToString();
+            return pstr;
         }
 
-        public double foundTraingleS(double a, double b, double c)
+        public string foundTraingleS(double a, double b, double c)
         {
             
             double p = (a + b + c) / 2;
             double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
-            return s;
+            string sstr = s.ToString();
+            return sstr;
         }
 
-        public double foundTriangleHa()
+        public string foundTriangleHa()
         {
             double p = (a + b + c) / 2;
             double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
             double h =(2*s)/a;
-            return h;
+            string hstr = h.ToString();
+            return hstr;
+        }
+
+        public string foundtype(double a, double b, double c)
+        {
+            string type = "";
+            if (a == b && b == c && c == a)
+            {
+                type = "Equilateral triangle";
+            }
+            else if (a == b || b == c || c == a)
+            {
+                type = "Isosceles triangle";
+            }
+            else
+            {
+                type = "Scalene triangle";
+            }
+            return type;
         }
 
         public double NewAValue 

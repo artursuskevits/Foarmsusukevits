@@ -1,32 +1,29 @@
-﻿using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Foarmsusukevits
 {
-    public partial class Kolmnurk : Form
+    public partial class Kolmnurk2 : Form
     {
         System.Windows.Forms.Button btn;
         System.Windows.Forms.ListView lw = new System.Windows.Forms.ListView();
         PictureBox pb;
         System.Windows.Forms.TextBox tb1, tb2, tb3;
         System.Windows.Forms.Label lbl1, lbl2, lbl3;
-        public Kolmnurk()
+        public Kolmnurk2()
         {
             this.Height = 1000;
             this.Width = 1000;
             this.Text = "Kolmnurk";
             pb = new PictureBox();
-            pb.Location = new Point(650,280);
+            pb.Location = new Point(650, 280);
             pb.Image = new Bitmap("../../../triangle.png");
             pb.Size = new Size(220, 220);
             pb.SizeMode = PictureBoxSizeMode.Zoom;
@@ -40,7 +37,7 @@ namespace Foarmsusukevits
             lw.Columns.Add("Название столбца 2", 150);
             this.Controls.Add(lw);
             btn = new System.Windows.Forms.Button();
-            btn.Height =200;
+            btn.Height = 200;
             btn.Width = 200;
             btn.Text = "Start!";
             btn.Location = new Point(650, 50);
@@ -65,14 +62,14 @@ namespace Foarmsusukevits
             lbl1.Location = new Point(70, 450);
             this.Controls.Add(lbl1);
 
-            
+
 
             tb2 = new System.Windows.Forms.TextBox();
             tb2.BorderStyle = BorderStyle.Fixed3D;
             tb2.Height = 50;
             tb2.Width = 100;
             tb2.Text = "2";
-            tb2.Location = new Point( 150, tb1.Location.Y + 40);
+            tb2.Location = new Point(150, tb1.Location.Y + 40);
             tb2.KeyDown += new KeyEventHandler(Txt_box_AcceptsTabChanged);
             this.Controls.Add(tb2);
 
@@ -80,7 +77,7 @@ namespace Foarmsusukevits
             lbl2.Text = "B side: ";
             lbl2.Height = 30;
             lbl2.Width = 80;
-            lbl2.Location = new Point(70, lbl1.Location.Y+40);
+            lbl2.Location = new Point(70, lbl1.Location.Y + 40);
             this.Controls.Add(lbl2);
 
             tb3 = new System.Windows.Forms.TextBox();
@@ -88,7 +85,7 @@ namespace Foarmsusukevits
             tb3.Height = 50;
             tb3.Width = 100;
             tb3.Text = "3";
-            tb3.Location = new Point(150, tb2.Location.Y  + 40);
+            tb3.Location = new Point(150, tb2.Location.Y + 40);
             tb3.KeyDown += new KeyEventHandler(Txt_box_AcceptsTabChanged);
             this.Controls.Add(tb3);
 
@@ -102,14 +99,14 @@ namespace Foarmsusukevits
 
         private void Btn_Click(object? sender, EventArgs e)
         {
-            
-                lw.Clear();
-                lw.View = View.Details;
-                lw.TabIndex = 2;
-                lw.Columns.Add("Название столбца 1", 150);
-                lw.Columns.Add("Название столбца 2", 150);
-                this.Controls.Add(lw);
-                double a, b, c;
+
+            lw.Clear();
+            lw.View = View.Details;
+            lw.TabIndex = 2;
+            lw.Columns.Add("Название столбца 1", 150);
+            lw.Columns.Add("Название столбца 2", 150);
+            this.Controls.Add(lw);
+            double a, b, c;
             if (double.TryParse(tb1.Text, out a) && double.TryParse(tb2.Text, out b) && double.TryParse(tb3.Text, out c))
             {
                 a = Convert.ToDouble(tb1.Text);
@@ -155,7 +152,7 @@ namespace Foarmsusukevits
 
         private void triangle_pilt()
         {
-            if (lw.Items[5].SubItems[0].Name =="Equilateral triangle")
+            if (lw.Items[5].SubItems[0].Name == "Equilateral triangle")
             {
                 pb.Image = new Bitmap("../../../EquilateralTriangle.png");
             }
@@ -175,9 +172,10 @@ namespace Foarmsusukevits
         }
         private void Txt_box_AcceptsTabChanged(object? sender, KeyEventArgs e)
         {
-            
-            
+
+
 
         }
     }
+    
 }
