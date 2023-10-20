@@ -21,34 +21,38 @@ namespace Foarmsusukevits
         System.Windows.Forms.Label lbl1, lbl2,lbl3;
         public Kolmnurk2()
         {
-            this.Height = 1000;
-            this.Width = 1000;
-            this.Text = "Kolmnurk";
+            this.Height = 700;
+            this.Width = 750;
+            this.Text = "Kolmnurk 2";
+            this.BackColor = Color.LightGreen;
             lbl3 = new System.Windows.Forms.Label();
-            lbl3.Location = new Point(650, 280);
+            lbl3.Location = new Point(500, 280);
             lbl3.Size = new Size(220, 220);
             lbl3.BorderStyle = BorderStyle.Fixed3D;
+            lbl3.BackColor = Color.White;
             this.Controls.Add(lbl3);
             lw.Size = new Size(400, 400);
             lw.Location = new Point(30, 30);
             lw.View = View.Details;
             lw.TabIndex = 2;
-            lw.Columns.Add("Название столбца 1", 150);
-            lw.Columns.Add("Название столбца 2", 150);
+            lw.Columns.Add("Väli", 150);
+            lw.Columns.Add("Tähtsus", 150);
             this.Controls.Add(lw);
             btn = new System.Windows.Forms.Button();
             btn.Height = 200;
             btn.Width = 200;
-            btn.Text = "Start!";
-            btn.Location = new Point(650, 50);
+            btn.Text = "Alusta!";
+            btn.Location = new Point(510, 50);
             btn.Click += Btn_Click;
+            btn.BackColor = Color.White;
             this.Controls.Add(btn);
             closebtn = new System.Windows.Forms.Button();
             closebtn.Height = 100;
             closebtn.Width = 100;
-            closebtn.Text = "Close form";
-            closebtn.Location = new Point(700, lbl3.Location.X-100);
+            closebtn.Text = "Sule form";
+            closebtn.Location = new Point(550, lbl3.Location.X-20+20+10);
             this.Controls.Add(closebtn);
+            closebtn.BackColor = Color.White;
             closebtn.Click += Closebtn_Click;
 
             tb1 = new System.Windows.Forms.TextBox();
@@ -62,7 +66,7 @@ namespace Foarmsusukevits
 
 
             lbl1 = new System.Windows.Forms.Label();
-            lbl1.Text = "Square: ";
+            lbl1.Text = "Ruut: ";
             lbl1.Height = 30;
             lbl1.Width = 80;
             lbl1.Location = new Point(70, 450);
@@ -80,7 +84,7 @@ namespace Foarmsusukevits
             this.Controls.Add(tb2);
 
             lbl2 = new System.Windows.Forms.Label();
-            lbl2.Text = "Side: ";
+            lbl2.Text = "Külg: ";
             lbl2.Height = 30;
             lbl2.Width = 80;
             lbl2.Location = new Point(70, lbl1.Location.Y + 40);
@@ -100,8 +104,8 @@ namespace Foarmsusukevits
             lw.Clear();
             lw.View = View.Details;
             lw.TabIndex = 2;
-            lw.Columns.Add("Название столбца 1", 150);
-            lw.Columns.Add("Название столбца 2", 150);
+            lw.Columns.Add("Väli", 150);
+            lw.Columns.Add("Tähtsus", 150);
             this.Controls.Add(lw);
             double a;
            
@@ -115,9 +119,9 @@ namespace Foarmsusukevits
             lbl3.Font = new Font("Arial", 16);
             string Sstr=S.ToString();
                Triangle triangle = new Triangle(a,0,0);
-                lw.Items.Add("Side");
-                lw.Items.Add("Triangle S");
-                lw.Items.Add("Height to Side ");
+                lw.Items.Add("Külg");
+                lw.Items.Add("Kolmurk S");
+                lw.Items.Add("Kõrgus kuni külg ");
 
                 lw.Items[0].SubItems.Add(triangle.ShowASide());
                 lw.Items[1].SubItems.Add(Sstr);

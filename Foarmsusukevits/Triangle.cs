@@ -65,7 +65,7 @@ namespace Foarmsusukevits
 
         public string foundTriangleHbySnadoneside(double s)
         {
-            double h = (2 * s) / a;
+            double h =  a / (2 * s);
             h = Math.Round(h,2);
             string hstr = h.ToString();
             return hstr;
@@ -86,15 +86,15 @@ namespace Foarmsusukevits
             string type = "";
             if (a == b && b == c && c == a)
             {
-                type = "Equilateral triangle";
+                type = "Võrdkülgne kolmnurk";
             }
             else if (a == b || b == c || c == a)
             {
-                type = "Isosceles triangle";
+                type = "Tasakülgne kolmnurk";
             }
             else
             {
-                type = "Scalene triangle";
+                type = "Skaleeni kolmnurk";
             }
             return type;
         }
