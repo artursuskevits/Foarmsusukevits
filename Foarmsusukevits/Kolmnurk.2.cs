@@ -14,7 +14,7 @@ namespace Foarmsusukevits
 {
     public partial class Kolmnurk2 : Form
     {
-        System.Windows.Forms.Button btn;
+        System.Windows.Forms.Button btn, closebtn;
         System.Windows.Forms.ListView lw = new System.Windows.Forms.ListView();
         PictureBox pb;
         System.Windows.Forms.TextBox tb1, tb2;
@@ -43,7 +43,13 @@ namespace Foarmsusukevits
             btn.Location = new Point(650, 50);
             btn.Click += Btn_Click;
             this.Controls.Add(btn);
-
+            closebtn = new System.Windows.Forms.Button();
+            closebtn.Height = 100;
+            closebtn.Width = 100;
+            closebtn.Text = "Close form";
+            closebtn.Location = new Point(700, lbl3.Location.X-100);
+            this.Controls.Add(closebtn);
+            closebtn.Click += Closebtn_Click;
 
             tb1 = new System.Windows.Forms.TextBox();
             tb1.BorderStyle = BorderStyle.Fixed3D;
@@ -81,6 +87,11 @@ namespace Foarmsusukevits
             this.Controls.Add(lbl2);
 
             
+        }
+
+        private void Closebtn_Click(object? sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void Btn_Click(object? sender, EventArgs e)
