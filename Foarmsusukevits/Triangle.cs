@@ -65,7 +65,7 @@ namespace Foarmsusukevits
 
         public string foundTriangleHbySnadoneside(double s)
         {
-            double h =  a / (2 * s);
+            double h = (2 * s) / a;
             h = Math.Round(h,2);
             string hstr = h.ToString();
             return hstr;
@@ -76,7 +76,7 @@ namespace Foarmsusukevits
         {
             double p = (a + b + c) / 2;
             double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
-            double h = a / (2 * s);
+            double h = (2 * s) / a;
             string hstr = h.ToString();
             return hstr;
         }
