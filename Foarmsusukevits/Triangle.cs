@@ -76,7 +76,7 @@ namespace Foarmsusukevits
         {
             double p = (a + b + c) / 2;
             double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
-            double h =(2*s)/a;
+            double h = a / (2 * s);
             string hstr = h.ToString();
             return hstr;
         }

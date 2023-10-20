@@ -113,7 +113,7 @@ namespace Foarmsusukevits
             
             
             double S = Convert.ToDouble(tb2.Text);
-            string formula = $"h = 2 * {S} / {a}"; ;
+            string formula = $"h = 2 * {a} / {S}"; ;
             lbl3.Text = formula;
             lbl3.TextAlign = ContentAlignment.MiddleCenter;
             lbl3.Font = new Font("Arial", 16);
